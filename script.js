@@ -3,6 +3,7 @@ let Name = '';
 const Products = ['Polo', 'Pantalon', 'Camisa', 'Zapatos', 'Corbata', 'Chaqueta', 'Gorra', 'Bufanda', 'Guantes', 'Calcetines'];
 const Select = document.getElementById('product-select');
 const reload = document.getElementById('reload');
+let totalItems = 0;
 
 document.getElementById("button-plus").addEventListener("click", function() {
     addQuantity();
@@ -34,8 +35,16 @@ function subtractQuantity() {
 }
 
 function cleanWindow(){
+    if (confirm("Seguro que quiere continuar?")) {
+        localStorage.clear();
+        window.location.reload();
+    }
+}
+
+function addNewProduct() {
     if (Quantity > 0 && Name != '' && Select.value != '') {
         if (confirm("Seguro que quiere continuar?")) {
+            localStorage.setItem(Select.value, Quantity)
             window.location.reload();
         }
     }  else {
@@ -53,3 +62,15 @@ Products.forEach(Product => {
 Select.addEventListener("change", function() {
     console.log(Select.value);
 })
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    console.log(`${key}: ${value}`);
+    for (let j  = 0; j < value; j++) {
+        totalItems++;
+    }
+    document.getElementById("total-quantity").textContent = totalItems;
+}
+
+console.log("Total de productos:", totalItems);
