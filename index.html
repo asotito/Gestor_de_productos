@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pedidos</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="text-center font-sans" id="increment">
+        <div class="text-xl">
+            <h1>Gestión de Pedidos</h1>
+        </div>
+        <div  class="p-4">
+            <div class="flex justify-center items-center">
+                <p>Hola,</p>&nbsp
+                <button type="button" id="name" onclick="nameF()" class="py-2 px-4 bg-gray-400">Introducir nombre</button>
+            </div>
+            <div class="flex justify-center p-4 align-center items-center">
+                <div class="px-2">
+                    <p>Seleccione el producto de preferencia:</p>
+                </div>
+                <select id="product-select" class="bg-gray-400 py-2 px-4">
+                    <option value="" disabled selected>Selecciona una opción</option>        
+                </select>
+            </div>
+            
+            <div class="flex justify-center align-center items-center">
+                <p>Indique la cantidad:</p>
+                <div class="flex justify-center p-4">
+                    <button type="button" id="button-minus" class="px-2 border-2 border-black bg-gray-400">-</button>
+                    <p id="quantity-display" class="px-2 border-2 border-black">0</p>
+                    <button type="button" id="button-plus" class="px-2 border-2 border-black bg-gray-400">+</button>
+                </div>
+            </div>
+            <button class="bg-gray-400 py-2 px-4" type="button" id="reload" onclick="cleanWindow()" >Enviar</button>
+        </div>
+    </div>
+</body>
+</html>
