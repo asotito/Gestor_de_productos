@@ -18,7 +18,7 @@
                 <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
                     <br>Gestiona tu ruta de manera eficaz!</p>
                     <button type="button" id="start" class="py-2 px-4 bg-gray-400 rounded-lg">Añadir producto</button>
-                    <button class="bg-gray-400 py-2 px-4 rounded-lg" type="button" id="reload" onclick="cleanWindow()">Borrar Todo</button>
+                    <button class="bg-gray-400 py-2 px-4 rounded-lg" type="button" id="erase-all">Borrar Todo</button>
                 </div>
                 <div class="p-10 bg-gray-100 rounded-xl">
                     <p>Total de productos a entregar: <span id="total-quantity">0</span></p>
@@ -34,7 +34,9 @@
             <div class="flex flex-col justify-center items-center hidden" id="second-section">
                 <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
                     <p>Hola, por favor ingrese su direccion:</p>
-                    <button type="button" id="name" onclick="nameF()" class="py-2 px-4 bg-gray-400 rounded-lg">Direccion</button>
+                    <input type="text" direccion="text_name" autocomplete="off" value="" placeholder="Direccion" id="direccion" class="py-2 px-4 bg-gray-400 rounded-lg"/>
+                    <button type="button" id="next" class="py-2 px-4 bg-gray-400 rounded-lg" >Siguiente</button>
+                    <p class="hidden" id="alert-message-input">Por favor ingrese una direccion</p>
                 </div>
             </div>
             <div class="flex flex-col justify-center p-4 align-center items-center hidden" id="third-section">
@@ -45,7 +47,7 @@
                     <select id="product-select" class="bg-gray-400 py-2 px-4 rounded-lg">
                         <option value="" disabled selected>Selecciona una opción</option>        
                     </select>
-                    <button type="button" id="next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
+                    <button type="button" id="second-next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
                 </div>
             </div>
             <div class="flex justify-center align-center items-center hidden" id="fourth-section">
@@ -55,8 +57,9 @@
                         <button type="button" id="button-minus" class="px-2 border-2 border-black bg-gray-400">-</button>
                         <p id="quantity-display" class="px-2 border-2 border-black">0</p>
                         <button type="button" id="button-plus" class="px-2 border-2 border-black bg-gray-400">+</button>
+                        <p class="hidden" id="alert-message-minus">Seleccione el producto de preferencia:</p>
                     </div>
-                    <button type="button" id="second-next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
+                    <button type="button" id="third-next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
                 </div>
             </div>
             <div class="flex hidden justify-center align-center items-center flex flex-row gap-8" id="fifth-section">
@@ -65,7 +68,13 @@
                 </div>
                 
             </div>
-            
+            <div class="flex flex-col justify-center items-center space-y-10 hidden" id="confirm-section">
+                <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
+                    <br>Confirme</p>
+                    <button type="button" id="erase" class="py-2 px-4 bg-gray-400 rounded-lg">Eliminar todo</button>
+                    <button class="bg-gray-400 py-2 px-4 rounded-lg" type="button" id="cancel">Cancelar</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
