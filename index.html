@@ -11,35 +11,61 @@
 <body>
     <div class="text-center font-sans" id="increment">
         <div class="text-xl">
-            <h1>Gestión de Pedidos</h1>
+            <h1>Gestión de Rutas</h1>
         </div>
         <div  class="p-4">
-            <div class="flex justify-center items-center">
-                <p>Hola,</p>&nbsp
-                <button type="button" id="name" onclick="nameF()" class="py-2 px-4 bg-gray-400">Introducir nombre</button>
-            </div>
-            <div class="flex justify-center p-4 align-center items-center">
-                <div class="px-2">
-                    <p>Seleccione el producto de preferencia:</p>
+            <div class="flex flex-col justify-center items-center space-y-10" id="first-section">
+                <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
+                    <br>Gestiona tu ruta de manera eficaz!</p>
+                    <button type="button" id="start" class="py-2 px-4 bg-gray-400 rounded-lg">Añadir producto</button>
+                    <button class="bg-gray-400 py-2 px-4 rounded-lg" type="button" id="reload" onclick="cleanWindow()">Borrar Todo</button>
                 </div>
-                <select id="product-select" class="bg-gray-400 py-2 px-4">
-                    <option value="" disabled selected>Selecciona una opción</option>        
-                </select>
+                <div class="p-10 bg-gray-100 rounded-xl">
+                    <p>Total de productos a entregar: <span id="total-quantity">0</span></p>
+                    <p>Total de rutas: <span id="total-routes">0</span></p>
+                    <p>Lista de rutas con sus productos: <br> </p>
+                    <div class="flex flex-col">
+                        <div id="product-list">
+                            <p>vacio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center items-center hidden" id="second-section">
+                <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
+                    <p>Hola, por favor ingrese su direccion:</p>
+                    <button type="button" id="name" onclick="nameF()" class="py-2 px-4 bg-gray-400 rounded-lg">Direccion</button>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center p-4 align-center items-center hidden" id="third-section">
+                <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
+                    <div class="px-2">
+                        <p>Seleccione el producto de preferencia:</p>
+                    </div>
+                    <select id="product-select" class="bg-gray-400 py-2 px-4 rounded-lg">
+                        <option value="" disabled selected>Selecciona una opción</option>        
+                    </select>
+                    <button type="button" id="next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
+                </div>
+            </div>
+            <div class="flex justify-center align-center items-center hidden" id="fourth-section">
+                <div class="bg-gray-100 p-10 w-1/2 space-y-10 rounded-xl">
+                    <p>Indique la cantidad:</p>
+                    <div class="flex justify-center p-4">
+                        <button type="button" id="button-minus" class="px-2 border-2 border-black bg-gray-400">-</button>
+                        <p id="quantity-display" class="px-2 border-2 border-black">0</p>
+                        <button type="button" id="button-plus" class="px-2 border-2 border-black bg-gray-400">+</button>
+                    </div>
+                    <button type="button" id="second-next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
+                </div>
+            </div>
+            <div class="flex hidden justify-center align-center items-center flex flex-row gap-8" id="fifth-section">
+                <div class="p-4">
+                    <button class="bg-gray-400 py-2 px-4 rounded-lg" type="button" id="add">Finalizar</button>
+                </div>
+                
             </div>
             
-            <div class="flex justify-center align-center items-center">
-                <p>Indique la cantidad:</p>
-                <div class="flex justify-center p-4">
-                    <button type="button" id="button-minus" class="px-2 border-2 border-black bg-gray-400">-</button>
-                    <p id="quantity-display" class="px-2 border-2 border-black">0</p>
-                    <button type="button" id="button-plus" class="px-2 border-2 border-black bg-gray-400">+</button>
-                </div>
-            </div>
-            <button class="bg-gray-400 py-2 px-4" type="button" id="reload" onclick="cleanWindow()" >Borrar Todo</button>
-            <button class="bg-gray-400 py-2 px-4" type="button" id="reload" onclick="addNewProduct()" >Nuevo Producto</button>
-            <div class="p-4">
-                <p>Total de productos: <span id="total-quantity">0</span></p>
-            </div>
         </div>
     </div>
 </body>
