@@ -7,6 +7,7 @@
     <title>Gestión de Pedidos</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="text-center font-sans" id="increment">
@@ -21,7 +22,6 @@
                     <button class="bg-gray-400 py-2 px-4 rounded-lg" type="button" id="erase-all">Borrar Todo</button>
                 </div>
                 <div class="p-10 bg-gray-100 rounded-xl">
-                    <p>Total de productos a entregar: <span id="total-quantity">0</span></p>
                     <p>Total de rutas: <span id="total-routes">0</span></p>
                     <p>Lista de rutas con sus productos: <br> </p>
                     <div class="flex flex-col">
@@ -36,7 +36,6 @@
                     <p>Hola, por favor ingrese su direccion:</p>
                     <input type="text" direccion="text_name" autocomplete="off" value="" placeholder="Direccion" id="direccion" class="py-2 px-4 bg-gray-400 rounded-lg"/>
                     <button type="button" id="next" class="py-2 px-4 bg-gray-400 rounded-lg" >Siguiente</button>
-                    <p class="hidden" id="alert-message-input">Por favor ingrese una direccion</p>
                 </div>
             </div>
             <div class="flex flex-col justify-center p-4 align-center items-center hidden" id="third-section">
@@ -57,7 +56,6 @@
                         <button type="button" id="button-minus" class="px-2 border-2 border-black bg-gray-400">-</button>
                         <p id="quantity-display" class="px-2 border-2 border-black">0</p>
                         <button type="button" id="button-plus" class="px-2 border-2 border-black bg-gray-400">+</button>
-                        <p class="hidden" id="alert-message-minus">Seleccione el producto de preferencia:</p>
                     </div>
                     <button type="button" id="third-next" class="py-2 px-4 bg-gray-400 rounded-lg">Siguiente</button>
                 </div>
